@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Sharafat Ali Shah — Social Media Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050508;--bg2:#0a0a0f;--bg3:#101016;--bg4:#151520;
+  --card:rgba(255, 255, 255, 0.02);--card2:rgba(255,255,255,0.04);
+  --grad:linear-gradient(135deg, #ff416c, #ff4b2b);
+  --grad2:linear-gradient(135deg, #8A2387, #E94057, #F27121);
+  --grad3:linear-gradient(135deg, #00c6ff, #0072ff);
+  --pink:#ff416c;--orange:#ff4b2b;--cyan:#00c6ff;
+  --text:#ffffff;--text2:#b3b3b3;--text3:#808080;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
+  --r:20px;--r2:28px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--pink)}
+.cursor{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--pink);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,65,108,.6);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease-out}
+.orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0;opacity:.15;animation:float 10s ease-in-out infinite}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(255,65,108,0.8),transparent 70%);top:-150px;right:-100px;animation-delay:0s}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,198,255,0.6),transparent 70%);bottom:-150px;left:-100px;animation-delay:-4s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-40px) scale(1.05)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:72px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.scrolled{background:rgba(5,5,8,.85);border-bottom:1px solid var(--border);backdrop-filter:blur(30px);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
+.nav-logo{font-family:'Fraunces',serif;font-size:24px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;letter-spacing:-.5px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:var(--text2);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.5px;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-hire{background:var(--grad);color:#fff;padding:10px 26px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(255,65,108,.25)}
+.nav-hire:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,65,108,.4)}
+.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--text);display:block;transition:all .3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,5,8,0.98);backdrop-filter:blur(20px);z-index:490;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Fraunces',serif;font-size:36px;font-weight:900;color:var(--text2);text-decoration:none;transition:color .3s}
+.mobile-menu a:hover{color:var(--text)}
+
+/* HERO */
+.hero{min-height:100vh;padding:120px 5% 80px;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:60px;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,65,108,.1);border:1px solid rgba(255,65,108,.3);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:28px}
+.hero-tag .dot{width:6px;height:6px;background:var(--pink);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(48px,6vw,84px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--text);margin-bottom:16px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;padding-right:8px}
+.hero-sub{font-size:15px;font-weight:600;color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:28px}
+.hero-desc{color:var(--text2);font-size:16px;line-height:1.8;max-width:500px;margin-bottom:44px;font-weight:400}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:50px}
+.btn-main{background:var(--grad);color:#fff;padding:16px 36px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none;transition:all .3s;box-shadow:0 8px 30px rgba(255,65,108,.3);letter-spacing:.5px;display:inline-flex;align-items:center;justify-content:center}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,65,108,.5)}
+.btn-sec{background:rgba(255,255,255,.03);border:1px solid var(--border2);color:var(--text);padding:16px 36px;border-radius:100px;font-weight:600;font-size:14px;text-decoration:none;transition:all .3s;backdrop-filter:blur(10px);display:inline-flex;align-items:center;justify-content:center}
+.btn-sec:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.hero-platforms{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-platforms-label{font-size:12px;color:var(--text3);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.plat-pill{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;color:var(--text2);transition:all .3s;text-decoration:none;backdrop-filter:blur(10px)}
+.plat-pill:hover{border-color:var(--border2);color:var(--text);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+.plat-pill.ig:hover{border-color:rgba(255,65,108,.5);color:var(--pink)}
+.plat-pill.tt:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.plat-pill.li:hover{border-color:rgba(0,198,255,.5);color:var(--cyan)}
+.plat-pill.fb:hover{border-color:rgba(102,126,234,.5);color:#667eea}
+.hero-stats{display:flex;gap:40px;padding-top:40px;margin-top:12px;border-top:1px solid var(--border)}
+.hst .num{font-family:'Fraunces',serif;font-size:38px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.hst .lbl{font-size:13px;color:var(--text3);font-weight:600;letter-spacing:1px;margin-top:6px;text-transform:uppercase}
+
+/* HERO PHOTO */
+.hero-right{display:flex;align-items:center;justify-content:center;position:relative}
+.photo-container{position:relative;width:420px;height:520px}
+.photo-glow{position:absolute;inset:-40px;background:var(--grad);border-radius:50%;filter:blur(80px);opacity:.25;animation:pulse-glow 4s ease-in-out infinite}
+@keyframes pulse-glow{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.35;transform:scale(1.05)}}
+.photo-frame{position:absolute;inset:0;border-radius:200px 200px 100px 100px;background:linear-gradient(160deg,rgba(40,40,60,.4),rgba(20,20,30,.2));border:1px solid rgba(255,255,255,.15);overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 40px rgba(0,0,0,0.5)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.float-card{position:absolute;background:rgba(15,15,22,.85);border:1px solid var(--border2);border-radius:16px;padding:14px 20px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(24px);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.fc1{bottom:50px;right:-40px;animation:floatY 5s ease-in-out infinite}
+.fc2{top:80px;left:-60px;animation:floatY 5s ease-in-out infinite;animation-delay:-2.5s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.fc-icon{width:42px;height:42px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+.fc-text strong{display:block;font-size:15px;font-weight:700;color:var(--text)}
+.fc-text span{font-size:12px;color:var(--text3);font-weight:500}
+.photo-ring{position:absolute;inset:-25px;border-radius:210px 210px 120px 120px;border:1px dashed rgba(255,255,255,.15);animation:spin-slow 30s linear infinite}
+@keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* SECTIONS */
+.section{padding:120px 5%;position:relative;z-index:1}
+.section.alt{background:var(--bg2)}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,65,108,.08);border:1px solid rgba(255,65,108,.25);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px}
+.sec-title{font-family:'Fraunces',serif;font-size:clamp(36px,4.5vw,56px);font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:var(--text);margin-bottom:20px}
+.sec-sub{color:var(--text3);font-size:16px;max-width:560px;margin-bottom:60px;font-weight:400;line-height:1.7}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:100px;align-items:center}
+.about-img-card{width:100%;aspect-ratio:3/4;border-radius:var(--r2);background:var(--card);border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;backdrop-filter:blur(20px)}
+.about-img-card::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 60px rgba(0,0,0,0.8);pointer-events:none}
+.about-stat-card{position:absolute;bottom:-30px;right:-30px;background:rgba(10,10,15,.9);border:1px solid var(--border2);border-radius:16px;padding:20px 26px;display:flex;gap:16px;align-items:center;backdrop-filter:blur(24px);box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.asc-icon{width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
+.asc-text strong{display:block;color:var(--text);font-size:17px;font-weight:800}
+.asc-text span{font-size:13px;color:var(--text3);font-weight:500}
+.about-p{color:var(--text2);font-size:16px;line-height:1.9;margin-bottom:20px;font-weight:400}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.cc{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 20px;transition:all .4s cubic-bezier(0.165, 0.84, 0.44, 1);text-decoration:none;backdrop-filter:blur(10px)}
+.cc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,0.4);background:var(--card2)}
+.cc-ico{width:44px;height:44px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
+.cc-info .lbl{font-size:11px;color:var(--text3);font-weight:700;letter-spacing:1px;display:block;text-transform:uppercase;margin-bottom:2px}
+.cc-info span,.cc-info a{font-size:14px;color:var(--text);font-weight:600;text-decoration:none}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px;transition:all .4s cubic-bezier(0.165, 0.84, 0.44, 1);position:relative;overflow:hidden;backdrop-filter:blur(20px)}
+.sk-card::after{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .4s;z-index:0}
+.sk-card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,0.2);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.sk-card:hover::after{opacity:.04}
+.sk-card>*{position:relative;z-index:1}
+.sk-ico{width:56px;height:56px;border-radius:16px;margin-bottom:24px;background:rgba(255,65,108,.1);border:1px solid rgba(255,65,108,.25);display:flex;align-items:center;justify-content:center}
+.sk-ico i{font-size:24px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sk-name{font-family:'Fraunces',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:16px}
+.sk-tags{display:flex;flex-wrap:wrap;gap:8px}
+.sk-tag{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text2);font-size:12px;font-weight:600;padding:6px 14px;border-radius:8px}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:20px;max-width:900px;margin:0 auto}
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:40px;display:grid;grid-template-columns:220px 1fr;gap:40px;transition:all .4s;position:relative;overflow:hidden;backdrop-filter:blur(20px)}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad)}
+.exp-card:hover{border-color:var(--border2);transform:translateX(5px);box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+.exp-period{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+.exp-org{color:var(--text3);font-size:14px;font-weight:600}
+.exp-title{font-family:'Fraunces',serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:18px}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
+.exp-bullets li{color:var(--text2);font-size:15px;padding-left:22px;position:relative;font-weight:400;line-height:1.7}
+.exp-bullets li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--pink)}
+
+/* PORTFOLIO */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.port-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:all .4s cubic-bezier(0.165, 0.84, 0.44, 1);backdrop-filter:blur(20px)}
+.port-card:hover{transform:translateY(-10px);border-color:rgba(255,255,255,0.2);box-shadow:0 40px 80px rgba(0,0,0,.7)}
+.port-img{height:250px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.port-hover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .4s ease;background:rgba(5,5,8,.7);backdrop-filter:blur(4px)}
+.port-card:hover .port-hover{opacity:1}
+.ph-btn{background:var(--grad);color:#fff;font-size:13px;font-weight:800;padding:12px 28px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .3s ease;box-shadow:0 10px 30px rgba(255,65,108,.3)}
+.ph-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 15px 40px rgba(255,65,108,.5)}
+.port-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(0.22, 1, 0.36, 1)}
+.port-card:hover .port-img img{transform:scale(1.1)}
+.port-body{padding:30px}
+.port-stars{color:var(--orange);font-size:14px;letter-spacing:3px;margin-bottom:12px}
+.port-title{font-family:'Fraunces',serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:12px}
+.port-desc{color:var(--text3);font-size:14px;line-height:1.75;margin-bottom:20px;font-weight:400}
+.port-tags{display:flex;flex-wrap:wrap;gap:8px}
+.ptag{background:rgba(255,65,108,.08);border:1px solid rgba(255,65,108,.2);color:var(--pink);font-size:12px;font-weight:700;padding:5px 12px;border-radius:8px}
+
+/* REVIEWS */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.rev-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px;transition:all .4s;backdrop-filter:blur(20px)}
+.rev-card:hover{border-color:var(--border2);transform:translateY(-6px);box-shadow:0 25px 60px rgba(0,0,0,0.5)}
+.rev-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.rev-stars{color:var(--orange);font-size:15px;letter-spacing:3px}
+.upwork-chip{background:rgba(20,163,74,.15);border:1px solid rgba(20,163,74,.3);color:#4ade80;font-size:11px;font-weight:800;padding:5px 14px;border-radius:100px;letter-spacing:1px;text-transform:uppercase}
+.rev-quote-mark{font-family:'Fraunces',serif;font-size:70px;line-height:.8;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;opacity:.3}
+.rev-text{color:var(--text2);font-size:16px;line-height:1.8;margin-bottom:28px;font-style:italic;font-weight:300}
+.rev-divider{height:1px;background:var(--border);margin-bottom:24px}
+.rev-author{display:flex;align-items:center;gap:16px}
+.rev-av{width:48px;height:48px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid rgba(255,255,255,0.1);padding:2px}
+.rev-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.rev-name{font-weight:800;font-size:15px;color:var(--text)}
+.rev-proj{font-size:13px;color:var(--text3);margin-top:4px;font-weight:500}
+
+/* EDUCATION */
+.edu-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.edu-subtitle{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:30px}
+.edu-subtitle i{color:var(--pink);font-size:16px}
+.edu-cards{display:flex;flex-direction:column;gap:16px}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;display:flex;gap:20px;align-items:flex-start;transition:all .4s;backdrop-filter:blur(20px)}
+.edu-card:hover{border-color:var(--border2);transform:translateX(6px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+.edu-icon{width:52px;height:52px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;flex-shrink:0;box-shadow:0 10px 20px rgba(255,65,108,.2)}
+.edu-deg{font-weight:800;font-size:16px;color:var(--text);margin-bottom:6px}
+.edu-school{font-size:14px;color:var(--text2);font-weight:500}
+.edu-year{font-size:13px;color:var(--text3);margin-top:6px;font-weight:600}
+.cert-cards{display:flex;flex-direction:column;gap:14px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 24px;display:flex;gap:16px;align-items:center;transition:all .4s;backdrop-filter:blur(20px)}
+.cert-card:hover{border-color:var(--border2);transform:translateX(6px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+.cert-ico{width:44px;height:44px;border-radius:12px;background:rgba(255,65,108,.1);border:1px solid rgba(255,65,108,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cert-ico i{font-size:18px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cert-name{font-weight:700;font-size:15px;color:var(--text)}
+.cert-org{font-size:13px;color:var(--text3);margin-top:4px;font-weight:500}
+.cert-yr{margin-left:auto;font-size:12px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}
+
+/* CTA */
+.cta-section{padding:160px 5%;text-align:center;position:relative;z-index:1;border-top:1px solid var(--border);background:var(--bg2)}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;border-radius:50%;background:var(--grad);filter:blur(120px);opacity:.1;pointer-events:none}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(44px,7vw,84px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--text);margin-bottom:24px}
+.cta-sub{color:var(--text2);font-size:18px;font-weight:400;margin-bottom:50px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;position:relative;z-index:1;background:var(--bg)}
+.footer-brand{font-family:'Fraunces',serif;font-size:20px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.footer-brand small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+footer p{font-size:13px;color:var(--text3);font-weight:500}
+.footer-soc{display:flex;gap:12px}
+.fsoc{width:42px;height:42px;border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:16px;text-decoration:none;transition:all .3s;background:var(--card)}
+.fsoc:hover{border-color:rgba(255,65,108,.4);color:var(--pink);background:rgba(255,65,108,.08);transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,0.3)}
+
+/* ANIMATIONS */
+.reveal,.reveal-l,.reveal-r{opacity:0;transition:opacity .8s cubic-bezier(0.22, 1, 0.36, 1),transform .8s cubic-bezier(0.22, 1, 0.36, 1)}
+.reveal{transform:translateY(40px)}.reveal-l{transform:translateX(-40px)}.reveal-r{transform:translateX(40px)}
+.reveal.in,.reveal-l.in,.reveal-r.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;text-align:center;gap:60px;padding-top:140px}
+  .hero-right{order:-1}.photo-container{width:340px;height:420px}.fc1,.fc2{display:none}
+  .hero-btns,.hero-platforms,.hero-stats{justify-content:center}.hero-desc{margin-left:auto;margin-right:auto}
+  .about-wrap{grid-template-columns:1fr;gap:60px}.about-img-card{max-width:400px;margin:0 auto}
+  .exp-card{grid-template-columns:1fr;gap:20px;padding:30px}.exp-card::before{display:none}
+  .edu-wrap{grid-template-columns:1fr;gap:50px}
+}
+@media(max-width:768px){
+  .nav-links,.nav-hire{display:none}.hamburger{display:flex}
+  .section{padding:80px 5%}
+  .contact-cards{grid-template-columns:1fr}.hero-stats{gap:24px;flex-wrap:wrap}
+  footer{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .port-grid,.skills-grid,.rev-grid{grid-template-columns:1fr}
+  .photo-container{width:280px;height:340px}
+  .hero h1{font-size:40px}
+  .sec-title{font-size:32px}
+}
+
+</style>
+</head>
+<body>
+<div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
+  <a href="#portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="mailto:sharafat.edu1999@gmail.com" onclick="closeMob()">Contact</a>
+</div>
+
+<nav id="mainNav">
+  <a href="#" class="nav-logo">Sharafat.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="mailto:sharafat.edu1999@gmail.com" class="nav-hire">Hire Me</a>
+  <div class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><span class="dot"></span>Available for Projects</div>
+    <h1>Social Media<br><span class="grad-text">Manager</span><br>&amp; Strategist</h1>
+    <p class="hero-sub">Syed Sharafat Ali Shah &nbsp;·&nbsp; 3+ Years Experience</p>
+    <p class="hero-desc">Results-driven social media expert growing brands across Instagram, TikTok, Facebook &amp; beyond — delivering real business results with consistent 5-star client satisfaction on Upwork &amp; Fiverr.</p>
+    <div class="hero-btns">
+      <a href="mailto:sharafat.edu1999@gmail.com" class="btn-main"><i class="fa-solid fa-paper-plane"></i>&nbsp; Get In Touch</a>
+      <a href="#portfolio" class="btn-sec"><i class="fa-solid fa-images"></i>&nbsp; View Work</a>
+    </div>
+    <div class="hero-platforms">
+      <span class="hero-platforms-label">Active on</span>
+      <span class="plat-pill ig"><i class="fa-brands fa-instagram"></i> Instagram</span>
+      <span class="plat-pill tt"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+      <span class="plat-pill fb"><i class="fa-brands fa-facebook"></i> Facebook</span>
+      <span class="plat-pill li"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hst"><div class="num">3+</div><div class="lbl">Years Exp.</div></div>
+      <div class="hst"><div class="num">5★</div><div class="lbl">Upwork</div></div>
+      <div class="hst"><div class="num">10+</div><div class="lbl">Clients</div></div>
+      <div class="hst"><div class="num">4+</div><div class="lbl">Platforms</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-container">
+      <div class="photo-glow"></div>
+      <div class="photo-ring"></div>
+      <div class="photo-frame">
+        <!-- TO ADD PHOTO: replace this div with <img src="your-photo.jpg" alt="Sharafat Ali Shah"> -->
+        <div class="photo-placeholder">
+        <img src="./img/sharafat.png" alt="Sharafat Ali Shah" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" class="reveal-r">
+        </div>
+      </div>
+      <div class="float-card fc1">
+        <div class="fc-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="fc-text"><strong>5.0 Rating</strong><span>Upwork Verified</span></div>
+      </div>
+      <div class="float-card fc2">
+        <div class="fc-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="fc-text"><strong>3+ Years</strong><span>Experience</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section alt">
+  <div class="about-wrap">
+    <div style="position:relative" class="reveal-l">
+      <div class="about-img-card"><img src="./img/sharafat.png" alt="Sharafat Ali Shah" style="width: 100%; height: 100%; object-fit: cover; " class="reveal-r"></div>
+      <div class="about-stat-card">
+        <div class="asc-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="asc-text"><strong>5.0 ★ Upwork</strong><span>Consistent Reviews</span></div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="sec-eyebrow"><i class="fa-solid fa-user"></i> About Me</div>
+      <h2 class="sec-title">Turning Attention Into<br><span class="grad-text">Real Results</span></h2>
+      <p class="sec-sub">Strategic. Creative. Data-driven.</p>
+      <p class="about-p">I'm a results-driven Social Media Manager specialized in viral short-form video creation, data-driven campaigns, and brand growth. With 3+ years of hands-on experience, I've managed multi-platform accounts for clients across different industries worldwide.</p>
+      <p class="about-p">My approach combines analytics, trend research, and creative execution to deliver measurable growth, engagement, and brand visibility that converts audience attention into real business results.</p>
+      <div class="contact-cards">
+        <a href="tel:+923172982093" class="cc">
+          <div class="cc-ico"><i class="fa-solid fa-phone"></i></div>
+          <div class="cc-info"><span class="lbl">Phone</span><span>+92 317 298 2093</span></div>
+        </a>
+        <a href="mailto:sharafat.edu1999@gmail.com" class="cc">
+          <div class="cc-ico"><i class="fa-solid fa-envelope"></i></div>
+          <div class="cc-info"><span class="lbl">Email</span><span>sharafat.edu1999@gmail.com</span></div>
+        </a>
+        <a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="cc">
+          <div class="cc-ico"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="cc-info"><span class="lbl">Upwork</span><span>View My Profile ↗</span></div>
+        </a>
+        <a href="https://www.fiverr.com" target="_blank" class="cc">
+          <div class="cc-ico"><i class="fa-solid fa-fire"></i></div>
+          <div class="cc-info"><span class="lbl">Fiverr</span><span>View My Profile ↗</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="reveal">
+    <div class="sec-eyebrow"><i class="fa-solid fa-bolt"></i> What I Do</div>
+    <h2 class="sec-title">Core <span class="grad-text">Competencies</span></h2>
+    <p class="sec-sub">Full-stack social media skillset — from strategy and content creation to paid ads and deep analytics.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="sk-card reveal d1"><div class="sk-ico"><i class="fa-solid fa-chart-line"></i></div><div class="sk-name">Strategy &amp; Growth</div><div class="sk-tags"><span class="sk-tag">Growth Strategy</span><span class="sk-tag">Content Planning</span><span class="sk-tag">Audience Targeting</span><span class="sk-tag">Account Optimization</span><span class="sk-tag">Community Building</span></div></div>
+    <div class="sk-card reveal d2"><div class="sk-ico"><i class="fa-solid fa-video"></i></div><div class="sk-name">Content Creation</div><div class="sk-tags"><span class="sk-tag">Reels &amp; TikTok</span><span class="sk-tag">YouTube Shorts</span><span class="sk-tag">Copywriting</span><span class="sk-tag">Caption Strategy</span><span class="sk-tag">Visual Storytelling</span></div></div>
+    <div class="sk-card reveal d3"><div class="sk-ico"><i class="fa-solid fa-rectangle-ad"></i></div><div class="sk-name">Paid Advertising</div><div class="sk-tags"><span class="sk-tag">Meta Ads Manager</span><span class="sk-tag">Facebook Ads</span><span class="sk-tag">Instagram Ads</span><span class="sk-tag">Lead Generation</span><span class="sk-tag">Conversion Strategy</span></div></div>
+    <div class="sk-card reveal d1"><div class="sk-ico"><i class="fa-solid fa-palette"></i></div><div class="sk-name">Brand &amp; Design</div><div class="sk-tags"><span class="sk-tag">Brand Identity</span><span class="sk-tag">Canva</span><span class="sk-tag">CapCut Editing</span><span class="sk-tag">Visual Consistency</span><span class="sk-tag">Graphic Design</span></div></div>
+    <div class="sk-card reveal d2"><div class="sk-ico"><i class="fa-solid fa-magnifying-glass-chart"></i></div><div class="sk-name">Analytics &amp; Research</div><div class="sk-tags"><span class="sk-tag">Performance Reports</span><span class="sk-tag">Hashtag Research</span><span class="sk-tag">Competitor Analysis</span><span class="sk-tag">Trend Forecasting</span><span class="sk-tag">SEO Basics</span></div></div>
+    <div class="sk-card reveal d3"><div class="sk-ico"><i class="fa-solid fa-robot"></i></div><div class="sk-name">Tools &amp; Platforms</div><div class="sk-tags"><span class="sk-tag"><i class="fa-brands fa-instagram"></i> Instagram</span><span class="sk-tag"><i class="fa-brands fa-tiktok"></i> TikTok</span><span class="sk-tag"><i class="fa-brands fa-facebook"></i> Facebook</span><span class="sk-tag"><i class="fa-brands fa-linkedin"></i> LinkedIn</span><span class="sk-tag">ChatGPT &amp; AI</span><span class="sk-tag"><i class="fa-brands fa-wordpress"></i> WordPress</span></div></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section alt">
+  <div class="reveal">
+    <div class="sec-eyebrow"><i class="fa-solid fa-timeline"></i> Work History</div>
+    <h2 class="sec-title">Professional <span class="grad-text">Experience</span></h2>
+    <p class="sec-sub">3+ years of delivering measurable growth for clients across industries globally.</p>
+  </div>
+  <div class="exp-list">
+    <div class="exp-card reveal">
+      <div><div class="exp-period"><i class="fa-solid fa-calendar-days"></i>&nbsp; 2022 – Present</div><div class="exp-org"><i class="fa-brands fa-upwork"></i>&nbsp; Upwork &amp; Fiverr · Remote</div></div>
+      <div><div class="exp-title">Freelance Social Media Manager</div><ul class="exp-bullets"><li>Managed and scaled multiple social media accounts across different industries</li><li>Developed data-driven content strategies aligned with target audience behavior</li><li>Created high-performing reels and short-form videos to boost reach and engagement</li><li>Conducted competitor analysis to identify trends and growth opportunities</li><li>Maintained consistent brand voice and visual identity across all platforms</li><li>Used analytics insights to refine strategies and maximize ROI</li></ul></div>
+    </div>
+    <div class="exp-card reveal">
+      <div><div class="exp-period"><i class="fa-solid fa-calendar-days"></i>&nbsp; Mar 2025 – Present</div><div class="exp-org"><i class="fa-solid fa-building"></i>&nbsp; Maicam Services</div></div>
+      <div><div class="exp-title">Social Media Manager</div><ul class="exp-bullets"><li>Managing complete social media presence for multiple brands</li><li>Focused on content creation, engagement and organic growth strategy</li><li>Building consistent brand voice and visual identity across all platforms</li></ul></div>
+    </div>
+    <div class="exp-card reveal">
+      <div><div class="exp-period"><i class="fa-solid fa-calendar-days"></i>&nbsp; Previous Role</div><div class="exp-org"><i class="fa-solid fa-microchip"></i>&nbsp; New Tech Gilgit</div></div>
+      <div><div class="exp-title">Social Media Manager &amp; Content Creator</div><ul class="exp-bullets"><li>Managed multi-platform presence — Instagram, Facebook, TikTok, YouTube, LinkedIn</li><li>Created high-quality visuals and reels aligned with brand identity</li><li>Executed strategic campaigns improving visibility and conversions</li><li>Significantly increased audience engagement and customer inquiries</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="reveal">
+    <div class="sec-eyebrow"><i class="fa-solid fa-images"></i> My Work</div>
+    <h2 class="sec-title">Portfolio <span class="grad-text">Highlights</span></h2>
+    <p class="sec-sub">Selected projects showcasing real strategy, creativity and measurable results.</p>
+  </div>
+  <div class="port-grid">
+    <div class="port-card reveal d1">
+      <div class="port-img">
+        <img src="./img/p-1.jpg" alt="AI Platform">
+        <div class="port-hover"><a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="ph-btn">View Project</a></div>
+      </div>
+      <div class="port-body"><div class="port-stars">★★★★★ <span style="color:var(--text3);font-size:11px">5.0 · Mar 2026</span></div><div class="port-title">AI Platform — Growth Strategy</div><div class="port-desc">Multi-platform viral content system for a growing AI startup. Built viral-ready content frameworks across TikTok, YouTube &amp; Reddit.</div><div class="port-tags"><span class="ptag">Content Strategy</span><span class="ptag">TikTok</span><span class="ptag">YouTube</span><span class="ptag">Viral Content</span></div></div>
+    </div>
+    <div class="port-card reveal d2">
+      <div class="port-img">
+        <img src="./img/p-2.jpg" alt="App Launch Campaign">
+        <div class="port-hover"><a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="ph-btn">View Project</a></div>
+      </div>
+      <div class="port-body"><div class="port-stars">★★★★★ <span style="color:var(--text3);font-size:11px">5.0 · Jan 2026</span></div><div class="port-title">App Launch — Engagement Campaign</div><div class="port-desc">Fast-executed engagement campaign for a new app launch. Client praised fast delivery and strong professional communication.</div><div class="port-tags"><span class="ptag">Instagram</span><span class="ptag">Facebook</span><span class="ptag">Engagement</span><span class="ptag">App Marketing</span></div></div>
+    </div>
+    <div class="port-card reveal d3">
+      <div class="port-img">
+        <img src="./img/P-5.jpeg" alt="Smòoz Energy Product Campaign">
+        <div class="port-hover"><a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="ph-btn">View Project</a></div>
+      </div>
+      <div class="port-body"><div class="port-stars">★★★★★ <span style="color:var(--text3);font-size:11px">5.0 · Dec 2025</span></div><div class="port-title">Smòoz Energy — Product Campaign</div><div class="port-desc">Full product campaign design for Smòoz Energy Boost — visual identity, social creatives and end-to-end content strategy.</div><div class="port-tags"><span class="ptag">Brand Design</span><span class="ptag">Canva</span><span class="ptag">Product Campaign</span></div></div>
+    </div>
+    <div class="port-card reveal d1">
+      <div class="port-img">
+        <img src="./img/P-6.jpg" alt="New Tech Gilgit">
+        <div class="port-hover"><a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="ph-btn">View Project</a></div>
+      </div>
+      <div class="port-body"><div class="port-stars"><i class="fa-solid fa-globe" style="color:var(--pink)"></i> <span style="color:var(--text3);font-size:12px">Full Presence Management</span></div><div class="port-title">New Tech Gilgit — Full Presence</div><div class="port-desc">Complete 5-platform social media management with brand-aligned content, reels, campaigns and community growth strategy.</div><div class="port-tags"><span class="ptag">Multi-Platform</span><span class="ptag">Content Creation</span><span class="ptag">Community Growth</span></div></div>
+    </div>
+  </div>
+  <div class="reveal d2" style="display:flex; justify-content:center; margin-top:40px;">
+    <a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="btn-main">Show All Projects &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="section alt">
+  <div class="reveal">
+    <div class="sec-eyebrow"><i class="fa-solid fa-quote-left"></i> Testimonials</div>
+    <h2 class="sec-title">Client <span class="grad-text">Reviews</span></h2>
+    <p class="sec-sub">Consistent 5-star feedback across every Upwork project.</p>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card reveal d1"><div class="rev-top"><div class="rev-stars">★★★★★</div><span class="upwork-chip"><i class="fa-brands fa-upwork"></i>&nbsp; Upwork</span></div><div class="rev-quote-mark">"</div><div class="rev-text">"Fast and efficient, understands what he is doing. Highly recommended."</div><div class="rev-divider"></div><div class="rev-author"><div class="rev-av"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="App Launch Client" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><div><div class="rev-name">App Launch Client</div><div class="rev-proj"><i class="fa-solid fa-calendar-days" style="font-size:10px"></i>&nbsp; January 2026</div></div></div></div>
+    <div class="rev-card reveal d2"><div class="rev-top"><div class="rev-stars">★★★★★</div><span class="upwork-chip"><i class="fa-brands fa-upwork"></i>&nbsp; Upwork</span></div><div class="rev-quote-mark">"</div><div class="rev-text">"Delivered excellent results, increased engagement, and communicated professionally throughout the entire project."</div><div class="rev-divider"></div><div class="rev-author"><div class="rev-av"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Social Media Client" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><div><div class="rev-name">Social Media Client</div><div class="rev-proj"><i class="fa-solid fa-calendar-days" style="font-size:10px"></i>&nbsp; December 2025</div></div></div></div>
+    <div class="rev-card reveal d3"><div class="rev-top"><div class="rev-stars">★★★★★</div><span class="upwork-chip"><i class="fa-brands fa-upwork"></i>&nbsp; Upwork</span></div><div class="rev-quote-mark">"</div><div class="rev-text">"Outstanding viral content strategy. Built an incredible multi-platform system that genuinely works. Very professional."</div><div class="rev-divider"></div><div class="rev-author"><div class="rev-av"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="AI Platform Client" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div><div><div class="rev-name">AI Platform Client</div><div class="rev-proj"><i class="fa-solid fa-calendar-days" style="font-size:10px"></i>&nbsp; March 2026</div></div></div></div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+  <div class="reveal">
+    <div class="sec-eyebrow"><i class="fa-solid fa-graduation-cap"></i> Qualifications</div>
+    <h2 class="sec-title">Education &amp; <span class="grad-text">Certifications</span></h2>
+  </div>
+  <div class="edu-wrap">
+    <div>
+      <div class="edu-subtitle reveal"><i class="fa-solid fa-building-columns"></i> Academic Background</div>
+      <div class="edu-cards">
+        <div class="edu-card reveal d1"><div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><div class="edu-deg">MBA — Master of Business Administration</div><div class="edu-school">The University of Lahore</div><div class="edu-year">2020 – 2024</div></div></div>
+        <div class="edu-card reveal d2"><div class="edu-icon"><i class="fa-solid fa-book-open"></i></div><div><div class="edu-deg">BCom — Bachelor of Commerce</div><div class="edu-school">University of Karachi</div><div class="edu-year">2017 – 2019</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="edu-subtitle reveal"><i class="fa-solid fa-certificate"></i> Certifications</div>
+      <div class="cert-cards">
+        <div class="cert-card reveal d1"><div class="cert-ico"><i class="fa-solid fa-trophy"></i></div><div><div class="cert-name">Social Media Certification</div><div class="cert-org">HubSpot Academy</div></div><div class="cert-yr">2025</div></div>
+        <div class="cert-card reveal d2"><div class="cert-ico"><i class="fa-solid fa-video"></i></div><div><div class="cert-name">Content Creator Program</div><div class="cert-org">DigiSkills Pakistan</div></div><div class="cert-yr">2025</div></div>
+        <div class="cert-card reveal d3"><div class="cert-ico"><i class="fa-brands fa-google"></i></div><div><div class="cert-name">Google Digital Marketing</div><div class="cert-org">Google Certifications</div></div><div class="cert-yr">Certified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="sec-eyebrow reveal" style="justify-content:center"><i class="fa-solid fa-handshake"></i> Let's Work Together</div>
+  <h2 class="cta-title reveal d1">Ready to <span class="grad-text">Grow</span><br>Your Brand?</h2>
+  <p class="cta-sub reveal d2">Looking for a Social Media Manager who delivers real, measurable results? Let's talk about your goals.</p>
+  <div class="cta-btns reveal d3">
+    <a href="mailto:sharafat.edu1999@gmail.com" class="btn-main"><i class="fa-solid fa-envelope"></i>&nbsp; Send Email</a>
+    <a href="tel:+923172982093" class="btn-sec"><i class="fa-solid fa-phone"></i>&nbsp; Call Now</a>
+    <a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="btn-sec"><i class="fa-brands fa-upwork"></i>&nbsp; Upwork Profile</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Sharafat.<small>Social Media Manager</small></div>
+  <p>© 2026 Syed Sharafat Ali Shah · All Rights Reserved</p>
+  <div class="footer-soc">
+    <a href="mailto:sharafat.edu1999@gmail.com" class="fsoc" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="tel:+923172982093" class="fsoc" title="Phone"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://www.upwork.com/freelancers/~01ceb5a1f6310689bb?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2Fdetails%2F~01ceb5a1f6310689bb%2Fprofile" target="_blank" class="fsoc" title="Upwork"><i class="fa-solid fa-briefcase"></i></a>
+    <a href="https://www.fiverr.com" target="_blank" class="fsoc" title="Fiverr"><i class="fa-solid fa-fire"></i></a>
+    <a href="https://www.linkedin.com" target="_blank" class="fsoc" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+<script>
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'},80)});
+document.querySelectorAll('a,button,.sk-card,.port-card,.rev-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.transform='translate(-50%,-50%) scale(1.8)';ring.style.borderColor='rgba(245,87,108,.8)'});
+  el.addEventListener('mouseleave',()=>{ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.borderColor='rgba(245,87,108,.5)'});
+});
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+function toggleMob(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMob(){document.getElementById('mobileMenu').classList.remove('open')}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
